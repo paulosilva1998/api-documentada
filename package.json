@@ -1,0 +1,20 @@
+{
+  "name": "api-documentada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "docs:jsdoc": "jsdoc -c jsdoc.json --pedantic"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "jsdoc": "4.0.5"
+  }
+}

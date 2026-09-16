@@ -1,0 +1,54 @@
+@baseUrl = http://localhost:3000
+
+### Verificar o funcionamento da API
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Listar usuários
+GET {{baseUrl}}/api/users
+Accept: application/json
+
+### Buscar o usuário de identificador 1
+GET {{baseUrl}}/api/users/1
+Accept: application/json
+
+### Buscar um usuário inexistente
+GET {{baseUrl}}/api/users/999
+Accept: application/json
+
+### Testar um identificador inválido
+GET {{baseUrl}}/api/users/abc
+Accept: application/json
+
+### Cadastrar um usuário
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Marina Oliveira",
+  "email": "marina@ifrs.edu.br"
+}
+
+### Tentar cadastrar um e-mail já utilizado
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Outra pessoa",
+  "email": "ana@ifrs.edu.br"
+}
+
+### Testar o cadastro sem o e-mail
+POST {{baseUrl}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Usuário incompleto"
+}
+
+### Excluir o usuário de identificador 2
+DELETE {{baseUrl}}/api/users/2
+
+### Acessar um endpoint inexistente
+GET {{baseUrl}}/api/inexistente
+Accept: application/json
